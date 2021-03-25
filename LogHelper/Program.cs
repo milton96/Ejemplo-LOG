@@ -22,8 +22,10 @@ namespace LogHelper
 
             if (6 != 7)
             {
-                Log.Add(Log.ERROR, "Comparar valores", "Los valores son diferentes");
+                Log.Add(Log.WARNING, "Comparar valores", "Los valores son diferentes.");
             }
+
+            Log.Add(Log.INFO, "Main", "Pruebas finalizadas.");
 
             Log.Print("24-03-2021.txt");
             Console.ReadKey();

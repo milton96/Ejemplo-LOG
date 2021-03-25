@@ -11,6 +11,7 @@ namespace LogHelper.Models
     {
         public const string ERROR = "ERROR";
         public const string WARNING = "WARNING";
+        public const string INFO = "INFO";
         private const string _BASE_PATH = @"LOGS/";
 
         public static void Add(string type, string method, string msg)
@@ -18,12 +19,12 @@ namespace LogHelper.Models
             try
             {
                 DateTime now = DateTime.Now;
-                string date = now.ToString("dd/MM/yyyy HH:mm:ss");
+                string date = now.ToString("dd/MM/yyyy HH:mm:ss zzz");
                 string filename = String.Format("{0}.txt", now.ToString("dd-MM-yyyy"));
                 string file = String.Format("{0}{1}", _BASE_PATH, filename);
 
                 if (!Directory.Exists(_BASE_PATH)) Directory.CreateDirectory(_BASE_PATH);
-
+                
                 FileInfo fileInfo = new FileInfo(file);
                 if (!fileInfo.Exists) fileInfo.Create();
 
