@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogHelper.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,22 @@ namespace LogHelper
     {
         static void Main(string[] args)
         {
+            try
+            {
+                int a = Int32.Parse("asd");
+            }
+            catch (Exception ex)
+            {
+                Log.Add(Log.ERROR, "String parse to Int32", ex.Message);
+            }
+
+            if (6 != 7)
+            {
+                Log.Add(Log.ERROR, "Comparar valores", "Los valores son diferentes");
+            }
+
+            Log.Print("24-03-2021.txt");
+            Console.ReadKey();
         }
     }
 }
